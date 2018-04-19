@@ -1,0 +1,4 @@
+SELECT tblManifoldQualifications.Area AS Line, tblManifoldQualifications.Qualification_Name AS Training, tblManifoldEmployeeQualifications.Qualification_Lvl AS [Level], Count(tblManifoldEmployeeQualifications.ID_Man_Employee) AS [Number of people trained]
+FROM tblManifoldQualifications RIGHT JOIN tblManifoldEmployeeQualifications ON tblManifoldQualifications.ID = tblManifoldEmployeeQualifications.ID_Man_Qual
+GROUP BY tblManifoldQualifications.Area, tblManifoldQualifications.Qualification_Name, tblManifoldEmployeeQualifications.Qualification_Lvl;
+

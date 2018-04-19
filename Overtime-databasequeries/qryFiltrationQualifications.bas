@@ -1,0 +1,3 @@
+SELECT tblFiltrationQualifications.Qualification_Name, tblFiltrationEmployeeQualifications.[Qualification Level], tblFiltrationQualifications.Area
+FROM tblFiltrationQualifications RIGHT JOIN tblFiltrationEmployeeQualifications ON tblFiltrationQualifications.ID = tblFiltrationEmployeeQualifications.ID_Filt_Qual;
+

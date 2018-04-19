@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="tblShiftOT" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="tblShiftOT">
+<xsd:annotation>
+<xsd:appinfo>
+<od:index index-name="Employee ID, Line ID" index-key="Employee_x0020_ID_working " primary="no" unique="no" clustered="no" order="asc"/>
+<od:index index-name="Line ID" index-key="Line_x0020_ID " primary="no" unique="no" clustered="no" order="asc"/>
+<od:index index-name="PrimaryKey" index-key="Employee_x0020_ID_working Employee_x0020_ID_replaced " primary="yes" unique="yes" clustered="no" order="asc asc"/>
+<od:index index-name="tblEmployeesOTtblShiftOT1" index-key="Employee_x0020_ID_working " primary="no" unique="no" clustered="no" order="asc"/>
+<od:index index-name="tblLinestblShift" index-key="Line_x0020_ID " primary="no" unique="no" clustered="no" order="asc"/>
+<od:index index-name="tblVacanciestblShift" index-key="Why_x0020_overtime_x0020_selected " primary="no" unique="no" clustered="no" order="asc"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Overtime_x0020_Solicitation_x0020_Date" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime"/>
+<xsd:element name="Overtime_x0020_start_x0020_date" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime"/>
+<xsd:element name="Overtime_x0020_hours_x0020_needed" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="Employee_x0020_ID_working" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int"/>
+<xsd:element name="Line_x0020_ID" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="Why_x0020_overtime_x0020_selected" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Overtime_x0020_hours_x0020_charged" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="Schedule_x0020_added_x0020_to_x0020_Kronos_x003F_" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean"/>
+<xsd:element name="Employee_x0020_ID_replaced" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

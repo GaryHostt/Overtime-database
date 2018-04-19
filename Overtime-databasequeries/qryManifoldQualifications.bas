@@ -1,0 +1,3 @@
+SELECT tblManifoldQualifications.Qualification_Name, tblManifoldEmployeeQualifications.Qualification_Lvl, tblManifoldQualifications.Area
+FROM tblManifoldQualifications RIGHT JOIN tblManifoldEmployeeQualifications ON tblManifoldQualifications.ID = tblManifoldEmployeeQualifications.ID_Man_Qual;
+
